@@ -295,11 +295,7 @@ function createNDimensionalArray(n, size) {
  *    flattenArray([1, 2, 3, 4]) => [1, 2, 3, 4]
  */
 function flattenArray(nestedArray) {
-  return nestedArray.reduce(
-    (acc, val) =>
-      Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val),
-    []
-  );
+  return nestedArray.flat(Infinity);
 }
 
 /**
